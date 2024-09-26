@@ -1,0 +1,59 @@
+/* Estilo básico para restablecer márgenes y padding */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Estilos para la galería */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columnas iguales */
+    gap: 10px;
+    /* Espacio entre las imágenes */
+    padding: 10px;
+}
+
+
+/* Estilos para las imágenes: todas tendrán el mismo tamaño dentro del grid */
+
+.gallery img {
+    width: 100%;
+    /* Se ajusta al ancho del contenedor */
+    height: 200px;
+    /* Altura fija para uniformidad */
+    object-fit: cover;
+    /* Recorta la imagen para cubrir el contenedor manteniendo la proporción */
+    border-radius: 8px;
+    /* Bordes redondeados opcionales */
+    display: block;
+}
+
+
+/* Diseño responsive para pantallas más pequeñas */
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columnas en pantallas medianas */
+    }
+    .gallery img {
+        height: 150px;
+        /* Ajuste de altura en pantallas más pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        /* 1 columna en pantallas pequeñas */
+    }
+    .gallery img {
+        height: 120px;
+        /* Ajuste de altura en pantallas pequeñas */
+    }
+}
